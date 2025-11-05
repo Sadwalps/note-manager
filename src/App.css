@@ -1,1 +1,18 @@
+/* Home page */
+.addbtn:hover{
+    font-size: 40px;
+    transition-duration: .1s;
+    color: rgb(84, 79, 117)
+}
+.weblogo:hover{
+    height: 45px;
+    width: 45px;
+transition-duration: .1s;
+}
 
+.homepage{
+    background-image: url(https://i0.wp.com/pianistmusings.com/wp-content/uploads/2019/01/DSC_5837.jpg?fit=3507%2C1883&ssl=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+}
