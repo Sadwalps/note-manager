@@ -26,10 +26,10 @@ function Addednotes() {
         <div className='container-fluid '>
           <div className="row pt-5">
             <div className="col-md-6 d-flex flex-column justify-content-center align-items-center text-light">
-              <h2 style={{fontWeight:"bold"}}>Note Manger</h2>
-             <p className='fs-3 text-center' >
+              <h2 style={{ fontWeight: "bold" }}>Note Manger</h2>
+              <p className='fs-3 text-center' >
                 Its a simple yet powerful tool designed to keep your ideas organized. Whether it's your daily tasks, creative thoughts, or study notes - save everything safely and access it anytime, anywhere
-             </p>
+              </p>
             </div>
             <div className="col-md-6 d-flex flex-column justify-content-center align-items-center pt-4">
               <img src="https://www.astrobrights.com/-/media/images/astrobrightsstorefront/inspiration/articles/easy-paper-notebooks-backtoschool-lined-notebook.ashx?la=en" alt="" className='w-100 shadow' />
@@ -41,11 +41,32 @@ function Addednotes() {
 
       {/* Added notes section 2 */}
       <div className='addednotesection2'>
-      <h2 className='text-center'>Added Notes</h2>
-      <div className='container-fluid'>
-        <Notecard/>
+        <h2 className='text-center py-5'>Added Notes</h2>
+        <div className='container-fluid'>
+          <div className="row">
+            <div className="col-md-2"></div>
+            <div className="col-md-8">
+<Notecard />
+            </div>
+            <div className="col-md-2"></div>
+          </div>
+          
 
-      </div>
+        </div>
+
+        {/* if  details not added  */}
+        <div className='d-flex justify-content-center align-items-center' style={{ minheight: "90vh" }}>
+          <div className='row'>
+            <div className="col-md-2"></div>
+            <div className="col-md-8">
+              <img src="https://png.pngtree.com/thumb_back/fh260/background/20221005/pngtree-note-write-note-paper-photo-image_6880654.jpg" alt="" className='w-100' />
+              <h3 className='text-center mt-4'>No Notes added yet !!!</h3>
+            </div>
+            <div className="col-md-2"></div>
+
+          </div>
+
+        </div>
 
       </div>
 
