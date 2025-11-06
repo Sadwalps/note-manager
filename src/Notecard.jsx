@@ -2,7 +2,11 @@ import React from 'react'
 
 function Notecard() {
   return (
-    <div>Notecard</div>
+    <>
+    <div className='m-2 '>
+
+    </div>
+    </>
   )
 }
 

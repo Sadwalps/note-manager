@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './Home'
 import Footer from './Footer'
+import Addednotes from './Addednotes'
 
 function App() {
  
@@ -9,6 +10,7 @@ function App() {
     <>
     <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='/addednotes' element={<Addednotes/>}/>
     </Routes>
     <Footer/>
     </>

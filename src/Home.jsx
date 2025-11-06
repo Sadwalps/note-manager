@@ -3,8 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import { Link } from 'react-router-dom';
 
 function Home() {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
         <>
             {/* nav bar */}
@@ -20,7 +28,7 @@ function Home() {
                         />{' '}
 
                     </Navbar.Brand>
-                    <button className=' btn text-primary' style={{ height: "4rem" }}>
+                    <button onClick={handleShow} className=' btn text-primary' style={{ height: "4rem" }}>
                         <FontAwesomeIcon icon={faPlus} className='fa-2x addbtn' />
                     </button>
                 </Container>
@@ -28,17 +36,41 @@ function Home() {
 
             {/* Home section */}
             <div className='homepage container-fluid'>
-                <div className="row "  style={{ height: "80vh" }}>
+                <div className="row " style={{ height: "80vh" }}>
                     <div className="col-md-2"></div>
                     <div className="col-md-8 d-flex justify-content-center align-items-center">
-                        <div className='d-flex flex-column p-5 bg-light'>
-                            <button className='btn btn-lg btn-primary rounded-0 ' style={{fontWeight:"bold"}}>Add Notes</button>
-                             <button className='btn btn-lg btn-info rounded-0 mt-3' style={{fontWeight:"bold"}}>All Notes</button>
+                        <div className='d-flex flex-column justify-content-center align-items-center p-5 bg-light'>
+                            <button onClick={handleShow} className='btn btn-lg btn-primary rounded-0 ' style={{ fontWeight: "bold" }}>Add Notes</button>
+                          <Link to={'/addednotes'}><button className='btn btn-lg btn-info rounded-0 mt-3' style={{ fontWeight: "bold" }}>All Notes</button></Link>  
                         </div>
                     </div>
                     <div className="col-md-2"></div>
                 </div>
             </div>
+
+            {/* modal for add notes */}
+            <Modal
+                show={show}
+                onHide={handleClose}
+                backdrop="static"
+                keyboard={false}
+                size='lg'
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title className='text-primary' style={{ fontWeight: "bold" }}>Add Notes</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <input type="text" className='form-control py-2 text-center bg-primary fs-5 ' placeholder='Title' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
+                    <textarea className='form-control py-2 mt-2 text-center bg-primary fs-5 ' placeholder='Description' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="danger" onClick={handleClose}>
+                        Cancel
+                    </Button>
+                    <Button variant="success">Add</Button>
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }
