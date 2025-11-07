@@ -21,15 +21,16 @@
 /* Footer */
 .footerquotes {
     font-size: x-large;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 /* Added notes */
-#addednotesection1{
-   min-height: 90vh;
-    
+#addednotesection1 {
+    min-height: 90vh;
+
 }
-.addednotesection2{
+
+.addednotesection2 {
     background-image: url(https://static.vecteezy.com/system/resources/previews/004/495/548/non_2x/light-soft-color-blue-low-poly-crystal-background-polygon-design-pattern-low-poly-illustration-low-polygon-background-free-vector.jpg);
     min-height: 100vh;
     background-repeat: no-repeat;
@@ -37,7 +38,7 @@
 }
 
 /* Notecard */
-.notecard{
+.notecard {
     background-image: url(https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/ucnc0ysladfn0fabkmzt/draw-learning-flashcards-for-kids.png);
     min-height: 20vh;
     background-repeat: no-repeat;
@@ -45,10 +46,35 @@
 
 }
 
+/* Page not found */
+#pnfhead1 {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+#pnfhead2 {
+    font-size: 35px;
+    font-weight: 800;
+}
+
+#pagenotfoundimg {
+    box-shadow: 0px 0px 20px rgb(157, 183, 223);
+}
+
 
 /* media query */
 @media screen and (max-width:470px) {
     .footerquotes {
-      font-size: large;
+        font-size: large;
+    }
+
+    #pnfhead1 {
+        font-size: 60px;
+        font-weight: bold;
+    }
+
+    #pnfhead2 {
+        font-size: 22px;
+        font-weight: 800;
     }
 }

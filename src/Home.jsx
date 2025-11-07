@@ -7,6 +7,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 function Home() {
     const [show, setShow] = useState(false);
@@ -41,14 +42,14 @@ function Home() {
                     <div className="col-md-8 d-flex justify-content-center align-items-center">
                         <div className='d-flex flex-column justify-content-center align-items-center p-5 bg-light'>
                             <button onClick={handleShow} className='btn btn-lg btn-primary rounded-0 ' style={{ fontWeight: "bold" }}>Add Notes</button>
-                          <Link to={'/addednotes'}><button className='btn btn-lg btn-info rounded-0 mt-3' style={{ fontWeight: "bold" }}>All Notes</button></Link>  
+                            <Link to={'/addednotes'}><button className='btn btn-lg btn-info rounded-0 mt-3' style={{ fontWeight: "bold" }}>All Notes</button></Link>
                         </div>
                     </div>
                     <div className="col-md-2"></div>
                 </div>
             </div>
 
-            {/* modal for add notes */}
+            {/* Modal for add notes */}
             <Modal
                 show={show}
                 onHide={handleClose}
@@ -71,6 +72,9 @@ function Home() {
                     <Button variant="success">Add</Button>
                 </Modal.Footer>
             </Modal>
+
+            {/* Footer */}
+            <Footer />
         </>
     )
 }

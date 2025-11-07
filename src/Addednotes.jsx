@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Notecard from './Notecard';
+import Footer from './Footer';
 
 function Addednotes() {
   return (
     <>
-
+      {/* navbar */}
       <Navbar className=" ">
         <Container >
           <Navbar.Brand href="#home" className='ms-auto' >
@@ -18,8 +19,6 @@ function Addednotes() {
           </Navbar.Brand>
         </Container>
       </Navbar>
-      {/* navbar */}
-
 
       {/*  */}
       <div className='bg-primary' id='addednotesection1' >
@@ -41,36 +40,34 @@ function Addednotes() {
 
       {/* Added notes section 2 */}
       <div className='addednotesection2'>
-        <h2 className='text-center py-5'>Added Notes</h2>
+        <h2 className='text-center pt-5 pb-3' style={{ fontWeight: "bold" }}>Added Notes</h2>
         <div className='container-fluid'>
           <div className="row">
             <div className="col-md-2"></div>
             <div className="col-md-8">
-<Notecard />
+              <Notecard />
+              <Notecard />
+              <Notecard />
             </div>
             <div className="col-md-2"></div>
           </div>
-          
-
         </div>
 
         {/* if  details not added  */}
-        <div className='d-flex justify-content-center align-items-center' style={{ minheight: "90vh" }}>
+        <div className='d-flex justify-content-center align-items-center m-2' style={{ minheight: "90vh" }}>
           <div className='row'>
             <div className="col-md-2"></div>
             <div className="col-md-8">
               <img src="https://png.pngtree.com/thumb_back/fh260/background/20221005/pngtree-note-write-note-paper-photo-image_6880654.jpg" alt="" className='w-100' />
-              <h3 className='text-center mt-4'>No Notes added yet !!!</h3>
+              <h3 className='text-center mt-4' style={{ fontWeight: "bold" }}>No Notes added yet !!!</h3>
             </div>
             <div className="col-md-2"></div>
-
           </div>
-
         </div>
-
       </div>
 
-
+      {/* Footer */}
+      <Footer />
 
     </>
   )

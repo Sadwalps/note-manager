@@ -15,6 +15,7 @@ function Editnotes() {
       <div>
         <button className='btn btn-primary ' onClick={handleShow}><FontAwesomeIcon icon={faPen} /></button>
       </div>
+      
       {/* modal for edit notes */}
       <Modal
         show={show}
