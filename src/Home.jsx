@@ -8,11 +8,54 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
+import { addnotesAPI } from './services/allApi';
 
 function Home() {
     const [show, setShow] = useState(false);
+    const [notedetails, setNotedetails] = useState({
+        title: "",
+        description: ""
+    })
+    console.log(notedetails);
 
-    const handleClose = () => setShow(false);
+    const handleCancel = () => {
+        setNotedetails({
+            title: "",
+            description: ""
+        })
+    }
+
+    const handleAdd = async () => {
+        const { title, description } = notedetails
+        console.log(title, description);
+        if (!title || !description) {
+            alert(`Fill the form completely`)
+        } else {
+            const reqBody = new FormData()
+            reqBody.append("title", title)
+            reqBody.append("description", description)
+
+            const result = await addnotesAPI(reqBody)
+            if (result.status == 200) {
+                alert(`Notes successfully added`)
+                setTimeout(() => {
+                    handleClose()
+                }, 1000);
+
+            } else if (result.status == 406) {
+                alert(result.response.data)
+            } else {
+                alert(`Something went wrong`)
+            }
+        }
+
+    }
+
+
+    const handleClose = () => {
+        handleCancel()
+        setShow(false);
+    }
     const handleShow = () => setShow(true);
     return (
         <>
@@ -62,14 +105,14 @@ function Home() {
                     <Modal.Title className='text-primary' style={{ fontWeight: "bold" }}>Add Notes</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <input type="text" className='form-control py-2 text-center bg-primary fs-5 ' placeholder='Title' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
-                    <textarea className='form-control py-2 mt-2 text-center bg-primary fs-5 ' placeholder='Description' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
+                    <input value={notedetails.title} onChange={(e) => setNotedetails({ ...notedetails, title: e.target.value })} type="text" className='form-control py-2 text-center bg-primary fs-5 ' placeholder='Title' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
+                    <textarea value={notedetails.description} onChange={(e) => setNotedetails({ ...notedetails, description: e.target.value })} className='form-control py-2 mt-2 text-center bg-primary fs-5 ' placeholder='Description' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="danger" onClick={handleClose}>
+                    <Button variant="danger" onClick={handleCancel}>
                         Cancel
                     </Button>
-                    <Button variant="success">Add</Button>
+                    <Button variant="success" onClick={handleAdd}>Add</Button>
                 </Modal.Footer>
             </Modal>
 

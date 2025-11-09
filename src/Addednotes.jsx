@@ -1,13 +1,27 @@
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Notecard from './Notecard';
 import Footer from './Footer';
+import { getnotesAPI } from './services/allApi';
 
 function Addednotes() {
+  const [allnotes, setAllnotes] = useState([])
+
+  const getallnotes = async () => {
+    const result = await getnotesAPI()
+    console.log(result);
+    setAllnotes(result.data)
+  }
+  console.log(allnotes);
+
+
+  useEffect(() => {
+    getallnotes()
+  }, [])
   return (
     <>
       {/* navbar */}
@@ -39,31 +53,29 @@ function Addednotes() {
       </div>
 
       {/* Added notes section 2 */}
-      <div className='addednotesection2'>
+      <div className='addednotesection2 pb-4'>
         <h2 className='text-center pt-5 pb-3' style={{ fontWeight: "bold" }}>Added Notes</h2>
-        <div className='container-fluid'>
-          <div className="row">
+        {allnotes.length > 0 ? <div className='container-fluid'>
+          {allnotes?.map((item) => (<div className="row">
             <div className="col-md-2"></div>
             <div className="col-md-8">
-              <Notecard />
-              <Notecard />
-              <Notecard />
+              <Notecard allnote={item} />
             </div>
             <div className="col-md-2"></div>
-          </div>
-        </div>
+          </div>))}
+        </div> :
 
-        {/* if  details not added  */}
-        <div className='d-flex justify-content-center align-items-center m-2' style={{ minheight: "90vh" }}>
-          <div className='row'>
-            <div className="col-md-2"></div>
-            <div className="col-md-8">
-              <img src="https://png.pngtree.com/thumb_back/fh260/background/20221005/pngtree-note-write-note-paper-photo-image_6880654.jpg" alt="" className='w-100' />
-              <h3 className='text-center mt-4' style={{ fontWeight: "bold" }}>No Notes added yet !!!</h3>
+
+          <div className='d-flex justify-content-center align-items-center m-2' style={{ minheight: "90vh" }}>
+            <div className='row'>
+              <div className="col-md-2"></div>
+              <div className="col-md-8">
+                <img src="https://png.pngtree.com/thumb_back/fh260/background/20221005/pngtree-note-write-note-paper-photo-image_6880654.jpg" alt="" className='w-100' />
+                <h3 className='text-center mt-4' style={{ fontWeight: "bold" }}>No Notes added yet !!!</h3>
+              </div>
+              <div className="col-md-2"></div>
             </div>
-            <div className="col-md-2"></div>
-          </div>
-        </div>
+          </div>}
       </div>
 
       {/* Footer */}
