@@ -15,3 +15,8 @@ export const getnotesAPI = async()=>{
 export const deletenotesAPI = async(id)=>{
     return await commonAPI(`DELETE`, `${serverURL}/deletenotes/${id}`,{})
 }
+
+//api for edit notes
+export const editnotesAPI = async(id,reqBody)=>{
+    return await commonAPI(`PUT`, `${serverURL}/editnotes/${id}`, reqBody)
+}

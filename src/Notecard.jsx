@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import Editnotes from './Editnotes'
 import { deletenotesAPI } from './services/allApi'
 
-function Notecard({ allnote,setDeletestatus }) {
+function Notecard({ allnote,setDeletestatus,setEditstatus }) {
   
 
   const handleDelete = async (id) => {
@@ -26,7 +26,7 @@ function Notecard({ allnote,setDeletestatus }) {
         <h4 className='text-info' style={{ fontWeight: "bold" }}>{allnote?.title}</h4>
         <h6 className='text-light' style={{ fontWeight: "bold" }}>{allnote?.description}</h6>
         <div className=' mt-2 d-flex justify-content-between  w-100'>
-          <Editnotes />
+          <Editnotes allnote={allnote} setEditstatus={setEditstatus} />
           <button onClick={() => handleDelete(allnote?._id)} className='btn btn-danger '><FontAwesomeIcon icon={faTrash} /></button>
         </div>
       </div>

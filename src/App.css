@@ -41,11 +41,8 @@
 
 /* Notecard */
 .notecard {
-    background-image: url(https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/ucnc0ysladfn0fabkmzt/draw-learning-flashcards-for-kids.png);
+    background-image: linear-gradient(to bottom, rgb(24, 24, 24), rgb(60, 57, 57),rgb(30, 29, 29));
     min-height: 20vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-
 }
 
 /* Page not found */
