@@ -10,3 +10,8 @@ export const addnotesAPI = async(reqBody)=>{
 export const getnotesAPI = async()=>{
     return await commonAPI(`GET`, `${serverURL}/allnotes`,"")
 }
+
+//api for delete notes
+export const deletenotesAPI = async(id)=>{
+    return await commonAPI(`DELETE`, `${serverURL}/deletenotes/${id}`,{})
+}

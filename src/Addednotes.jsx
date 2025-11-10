@@ -10,6 +10,7 @@ import { getnotesAPI } from './services/allApi';
 
 function Addednotes() {
   const [allnotes, setAllnotes] = useState([])
+  const [deletestatus, setDeletestatus] = useState({})
 
   const getallnotes = async () => {
     const result = await getnotesAPI()
@@ -21,16 +22,16 @@ function Addednotes() {
 
   useEffect(() => {
     getallnotes()
-  }, [])
+  }, [deletestatus])
   return (
     <>
       {/* navbar */}
       <Navbar className=" ">
         <Container >
-          <Navbar.Brand href="#home" className='ms-auto' >
-            <Link to={'/'}><button className='btn btn-primary  fs-4' style={{ float: "right" }}><FontAwesomeIcon icon={faHouse} /></button>
+          
+            <Link to={'/'} className='ms-auto'><button className='btn btn-primary  fs-4' style={{ float: "right" }}><FontAwesomeIcon icon={faHouse} /></button>
             </Link>
-          </Navbar.Brand>
+         
         </Container>
       </Navbar>
 
@@ -59,7 +60,7 @@ function Addednotes() {
           {allnotes?.map((item) => (<div className="row">
             <div className="col-md-2"></div>
             <div className="col-md-8">
-              <Notecard allnote={item} />
+              <Notecard allnote={item} setDeletestatus={setDeletestatus} />
             </div>
             <div className="col-md-2"></div>
           </div>))}

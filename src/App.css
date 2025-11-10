@@ -12,10 +12,12 @@
 }
 
 .homepage {
-    background-image: url(https://i0.wp.com/pianistmusings.com/wp-content/uploads/2019/01/DSC_5837.jpg?fit=3507%2C1883&ssl=1);
+    background-image: url(https://image.freepik.com/free-photo/notebook-with-pencil-top_1232-124.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
+    
+    /* https://i0.wp.com/pianistmusings.com/wp-content/uploads/2019/01/DSC_5837.jpg?fit=3507%2C1883&ssl=1 */
 }
 
 /* Footer */
