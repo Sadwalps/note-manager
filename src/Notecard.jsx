@@ -27,7 +27,7 @@ function Notecard({ allnote,setDeletestatus,setEditstatus }) {
         <h6 className='text-light' style={{ fontWeight: "bold" }}>{allnote?.description}</h6>
         <div className=' mt-2 d-flex justify-content-between  w-100'>
           <Editnotes allnote={allnote} setEditstatus={setEditstatus} />
-          <button onClick={() => handleDelete(allnote?._id)} className='btn btn-danger '><FontAwesomeIcon icon={faTrash} /></button>
+          <button onClick={() => handleDelete(allnote?._id)} className='btn btn-danger rounded-0'><FontAwesomeIcon icon={faTrash} /></button>
         </div>
       </div>
     </>

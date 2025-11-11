@@ -105,14 +105,14 @@ function Home() {
                     <Modal.Title className='text-primary' style={{ fontWeight: "bold" }}>Add Notes</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <input value={notedetails.title} onChange={(e) => setNotedetails({ ...notedetails, title: e.target.value })} type="text" className='form-control py-2 text-center bg-primary fs-5 ' placeholder='Title' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
-                    <textarea value={notedetails.description} onChange={(e) => setNotedetails({ ...notedetails, description: e.target.value })} className='form-control py-2 mt-2 text-center bg-primary fs-5 ' placeholder='Description' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
+                    <input value={notedetails.title} onChange={(e) => setNotedetails({ ...notedetails, title: e.target.value })} type="text" className='form-control py-2 text-center bg-primary fs-5 rounded-0' placeholder='Title' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
+                    <textarea value={notedetails.description} onChange={(e) => setNotedetails({ ...notedetails, description: e.target.value })} className='form-control py-2 mt-2 text-center bg-primary fs-5 rounded-0' placeholder='Description' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="danger" onClick={handleCancel}>
+                    <Button variant="danger rounded-0" onClick={handleCancel}>
                         Cancel
                     </Button>
-                    <Button variant="success" onClick={handleAdd}>Add</Button>
+                    <Button variant="success rounded-0" onClick={handleAdd}>Add</Button>
                 </Modal.Footer>
             </Modal>
 

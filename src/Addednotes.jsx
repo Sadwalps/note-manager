@@ -13,6 +13,7 @@ function Addednotes() {
   const [deletestatus, setDeletestatus] = useState({})
   const [editstatus, setEditstatus] = useState("")
 
+
   const getallnotes = async () => {
     const result = await getnotesAPI()
     console.log(result);
@@ -21,16 +22,17 @@ function Addednotes() {
   console.log(allnotes);
 
 
+
   useEffect(() => {
     getallnotes()
-  }, [deletestatus,editstatus])
+  }, [deletestatus, editstatus])
   return (
     <>
       {/* navbar */}
       <Navbar className=" ">
         <Container >
 
-          <Link to={'/'} className='ms-auto'><button className='btn btn-primary  fs-4' style={{ float: "right" }}><FontAwesomeIcon icon={faHouse} /></button>
+          <Link to={'/'} className='ms-auto'><button className='btn btn-primary rounded-0 fs-4' style={{ float: "right" }}><FontAwesomeIcon icon={faHouse} /></button>
           </Link>
 
         </Container>
@@ -57,6 +59,18 @@ function Addednotes() {
       {/* Added notes section 2 */}
       <div className='addednotesection2 pb-4'>
         <h2 className='text-center pt-5 pb-3' style={{ fontWeight: "bold" }}>Added Notes</h2>
+
+        {/* For search notes */}
+        {/* <div className='container-fluid mt-3 mb-5'>
+          <div className="row m-2">
+            <div className="col-md-2"></div>
+            <div className="col-md-8">
+              <input  onChange={(e) => setSearchKey(e.target.value)} type="text" className='form-control  text-center py-3 rounded-0 bg-primary text-dark' placeholder='Search Notes' style={{ fontWeight: "bold" }} />
+            </div>
+            <div className="col-md-2"></div>
+          </div>
+        </div> */}
+
         {allnotes.length > 0 ? <div className='container-fluid'>
           {allnotes?.map((item) => (<div className="row">
             <div className="col-md-2"></div>

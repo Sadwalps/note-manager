@@ -12,7 +12,7 @@
 }
 
 .homepage {
-    background-image: url(https://image.freepik.com/free-photo/notebook-with-pencil-top_1232-124.jpg);
+    background-image: url(https://th.bing.com/th/id/R.4cb2cb518d81232b011e6a5a879deb82?rik=DivZFT6pZoJ85A&riu=http%3a%2f%2ftheallendercenter.org%2fwp-content%2fuploads%2f2024%2f04%2f529-1.png&ehk=u5gzql8TDVqumCHy37uihkRfrQX4BNRifeHrlwIK31Y%3d&risl=&pid=ImgRaw&r=0);
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
@@ -28,7 +28,7 @@
 
 /* Added notes */
 #addednotesection1 {
-    min-height: 90vh;
+    min-height: 91vh;
 
 }
 

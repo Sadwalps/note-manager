@@ -7,7 +7,7 @@ export const addnotesAPI = async(reqBody)=>{
 }
 
 //api for get notes
-export const getnotesAPI = async()=>{
+export const getnotesAPI = async(searchKey)=>{
     return await commonAPI(`GET`, `${serverURL}/allnotes`,"")
 }
 

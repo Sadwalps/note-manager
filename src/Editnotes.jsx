@@ -46,7 +46,7 @@ function Editnotes({ allnote, setEditstatus }) {
     <>
 
       <div>
-        <button className='btn btn-primary ' onClick={handleShow}><FontAwesomeIcon icon={faPen} /></button>
+        <button className='btn btn-primary rounded-0' onClick={handleShow}><FontAwesomeIcon icon={faPen} /></button>
       </div>
 
       {/* modal for edit notes */}
@@ -62,14 +62,14 @@ function Editnotes({ allnote, setEditstatus }) {
           <Modal.Title className='text-primary' style={{ fontWeight: "bold" }}>Edit Notes</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <input value={editdetails.title} onChange={(e) => setEditdetails({ ...editdetails, title: e.target.value })} type="text" className='form-control py-2 text-center bg-primary fs-5 ' placeholder='Title' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
-          <textarea value={editdetails.description} onChange={(e) => setEditdetails({ ...editdetails, description: e.target.value })} className='form-control py-2 mt-2 text-center bg-primary fs-5 ' placeholder='Description' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
+          <input value={editdetails.title} onChange={(e) => setEditdetails({ ...editdetails, title: e.target.value })} type="text" className='form-control py-2 text-center bg-primary fs-5 rounded-0 ' placeholder='Title' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
+          <textarea value={editdetails.description} onChange={(e) => setEditdetails({ ...editdetails, description: e.target.value })} className='form-control py-2 mt-2 text-center bg-primary fs-5 rounded-0' placeholder='Description' style={{ fontWeight: "bold", color: "rgba(52, 50, 50, 1)" }} />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="danger" onClick={handleClose}>
+          <Button variant="danger rounded-0" onClick={handleClose}>
             Cancel
           </Button>
-          <Button onClick={() => handleEdit(editdetails?._id)} variant="primary">Save</Button>
+          <Button onClick={() => handleEdit(editdetails?._id)} variant="primary rounded-0">Save</Button>
         </Modal.Footer>
       </Modal>
     </>
